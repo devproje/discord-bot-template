@@ -1,4 +1,4 @@
-import { ChatInputApplicationCommandData, Client, CommandInteraction } from "discord.js";
+import { CommandInteraction } from "discord.js";
 import { AppCommand } from "../interfaces/command";
 
 export class PingPong implements AppCommand {

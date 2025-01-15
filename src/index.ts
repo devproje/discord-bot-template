@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-if (typeof process.env.BOT_TOKEN === "undefined") {
+if (process.env.BOT_TOKEN === undefined) {
 	console.error("token is not defined!");
 	process.exit(-1);
 }
@@ -12,4 +12,4 @@ if (typeof process.env.BOT_TOKEN === "undefined") {
 const kernel = new BotKernel(process.env.BOT_TOKEN);
 kernel.register("ping", new PingPong());
 
-kernel.run().then(_ => {});
+kernel.run().then(_ => _);

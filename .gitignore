@@ -1,3 +1,6 @@
+.idea/
+.fleet/
+
 dist/
 node_modules/
 

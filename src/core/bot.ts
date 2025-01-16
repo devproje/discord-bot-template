@@ -1,17 +1,17 @@
-import { Client, GatewayIntentBits, Interaction } from "discord.js";
-import { AppCommand } from "../interfaces/command";
+import { Client, Interaction, GatewayIntentBits } from "npm:discord.js";
+import { AppCommand } from "../interfaces/command.ts";
 
 export class BotKernel {
 	private token: string;
 	private bot: Client<boolean>;
 	private commands: Map<string, AppCommand> = new Map();
 
-	register(name: string, command: AppCommand) {
+	registerCommand(name: string, command: AppCommand) {
 		console.log(`load command /%s`, command.name);
 		this.commands.set(name, command);
 	}
 
-	unregister(name: string) {
+	unregisterCommand(name: string) {
 		this.commands.delete(name);
 	}
 

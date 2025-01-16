@@ -1,0 +1,16 @@
+{
+	"tasks": {
+		"dev": "deno run --watch --allow-env --allow-read --allow-net --env src/main.ts",
+		"build": "deno compile --allow-env --allow-read --allow-net --env --output dist/discord-bot src/main.ts",
+		"build:windows": "deno compile --allow-env --allow-read --allow-net --env --output dist/discord-bot.exe src/main.ts"
+	},
+	"compilerOptions": {
+		"strict": true
+	},
+	"unstable": [
+		"sloppy-imports"
+	],
+	"imports": {
+		"discord-api-types": "npm:discord-api-types@^0.37.115"
+	}
+}

@@ -19,6 +19,7 @@ export class BotKernel {
 	}
 
 	async run() {
+		const data = Array.from(this.commands.values());
 		this.bot.once("ready", async (client: Client<true>) => {
 			await client.application.commands.set(data);
 			console.log(`logged in as ${client.user.username}#${client.user.discriminator}`);
@@ -30,9 +31,8 @@ export class BotKernel {
 					type: ActivityType.Playing,
 				});
 			}, 10);
-		})
+		});
 
-		const data = Array.from(this.commands.values());
 		this.bot.on("interactionCreate", async (interaction: Interaction) => {
 			if (!interaction.isCommand())
 				return;

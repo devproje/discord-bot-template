@@ -1,16 +1,17 @@
 import { GatewayIntentBits } from "npm:discord.js";
 import { PingPong } from "./cmd/ping.ts";
-import { BotKernel } from "./core/bot.ts";
+import { BotKernel } from "./bot/kernel.ts";
 
-if (Deno.env.get("BOT_TOKEN") === undefined) {
+const token: string | undefined = Deno.env.get("BOT_TOKEN");
+if (!token || token === "") {
 	console.error("token is not defined!");
 	Deno.exit(-1);
 }
 
-const kernel = new BotKernel(Deno.env.get("BOT_TOKEN")!, [
+const kernel = new BotKernel(token, [
 	GatewayIntentBits.GuildPresences,
 	GatewayIntentBits.DirectMessages
 ]);
-kernel.registerCommand("ping", new PingPong());
+kernel.addCommand("ping", new PingPong());
 
 kernel.run().then(_ => _);

@@ -1,4 +1,6 @@
 {
+	"license": "MIT",
+	"version": "1.0.0",
 	"tasks": {
 		"dev": "deno run --watch --allow-env --allow-read --allow-net --env src/main.ts",
 		"build": "deno compile --allow-env --allow-read --allow-net --env --output dist/discord-bot src/main.ts",

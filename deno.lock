@@ -1,6 +1,7 @@
 {
   "version": "4",
   "specifiers": {
+    "npm:discord-api-types@0.37.115": "0.37.115",
     "npm:discord-api-types@~0.37.115": "0.37.115",
     "npm:discord.js@*": "14.17.3"
   },

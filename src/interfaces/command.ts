@@ -2,4 +2,5 @@ import { ChatInputApplicationCommandData, CommandInteraction } from "npm:discord
 
 export interface AppCommand extends ChatInputApplicationCommandData {
 	execute(interaction: CommandInteraction): Promise<void>;
+	break?(): Promise<void>;
 }
